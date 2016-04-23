@@ -1,0 +1,21 @@
+include ../mixins/form
+div.row
+	div.col-md-12
+		div.portlet.light.sysMsgPortlet
+			div.portlet-title
+				div.caption
+					span.caption-subject.bold 平台消息
+			div.portlet-body				
+				div.table-responsive
+					table.table.table-bordered.table-hover
+						thead
+							tr.heading
+								th 标题
+								th.text-center(style='width:80px') 日期
+						tbody#sysMsgTbody
+				div.paginate
+				div.row
+script(type='text/template', id='sysMsgFormTpl')
+	form.form-horizontal.form-row-seperated.editChannelDialogForm
+		+staticContentFormGroup('title', '标题', '<%=title%>')
+		+staticContentLastFormGroup('message', '内容', '<%=message%>')

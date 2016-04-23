@@ -1,0 +1,454 @@
+body{	
+	background-color: #eff3f8;
+}
+
+@media (max-width: 767px){
+	.navbar-nav .open .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0;
+		background-color: transparent;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+@media (max-width: 767px){
+	.navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
+		padding: 5px 15px 5px 25px;
+	}
+}
+
+a.underline{
+	text-decoration: underline!important;
+}
+
+.navbar-header{
+	min-height: 43px;
+}
+.control-label {	
+	font-weight: 700;
+	color: #000;
+}
+.form .form-row-seperated .form-group{
+	padding: 5px 0;
+}
+@media (max-width: 767px){
+	.files .btn {
+		width: 45px;
+		margin-bottom: 15px;
+	}
+}
+hr {
+	margin: 0
+}
+legend{
+	margin-bottom: 15px;
+    font-size: 18px;
+}
+.navbar-default .navbar-toggle {
+    /*visibility: hidden;*/
+}
+.text-nowrap{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.clear{
+	clear: both;
+}
+.brown{
+	color: #A1887F;
+}
+a.brown{
+	color: #A1887F;
+}
+a.brown.all:focus
+a.brown.all:visited{
+	color: #A1887F;
+}
+.btn.brown{
+	color: #fff;
+	background-color: #A1887F;
+}
+.btn.brown.comment,
+.btn.brown.agent{
+	font-size: 10px;
+	margin-top: 5px;
+}
+
+.portlet.light > .portlet-title{
+	min-height: auto;
+}
+.portlet.light.form-fit > .portlet-title {
+    padding: 6px 12px 0px 15px;    
+}
+
+.navbar{
+	margin-bottom: 5px;
+	min-height: 28px;
+}
+.navbar-brand {    
+    height: 28px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 22px;
+}
+.navbar-toggle {
+    padding: 7px 8px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+@media (min-width: 768px){
+	.navbar-brand {    
+	    height: 50px;
+	    padding: 15px 15px;
+	    font-size: 18px;
+	    line-height: 20px;
+	}
+}
+
+.nav-tabs.info>li{
+	/*width: 68px;
+	height: 58px;*/
+}
+.nav-tabs.info>li>a{
+	/*height: 100%;*/
+	padding: 2px;
+}
+.nav-tabs.info>li.active>a, 
+.nav-tabs.info>li.active>a:hover, 
+.nav-tabs.info>li.active>a:focus{
+	background-color: #ddd;
+}
+
+.agencyTileContainer,
+.brandTileContainer{
+	padding: 5px;
+	margin-bottom: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.brandTileContainer .footer{
+	margin: 0;
+	padding: 8px 0 2px;
+	border-top: 1px solid #ccc;
+}
+.agencyTile,
+.brandTile{
+	padding: 5px;
+	background-color: #eee;	
+	position: relative;
+}
+@media (min-width: 768px){
+	.brandList.row>div.col-sm-6 .brandTile {
+	    min-height: 240px;
+	}
+}
+@media (min-width: 992px){
+	.brandList.row>div.col-md-4 .brandTile {
+	    min-height: 240px;
+	}
+}
+
+.agencyTile>h4,
+.brandTile>h4{
+	margin: 0;
+	padding: 0;
+}
+
+.brandTile .newPro{
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: red;
+	color: white;
+	font-size: 12px;
+	padding: 1px 3px 0 2px;
+	font-weight: bold;
+}
+.brandTile .imgContainer{
+	padding: 0;
+    padding-right: 10px;
+    display: block;
+    height: 155px;
+    overflow: hidden;
+}
+.brandTile .imgDiv{
+	position: relative;
+	display: inline-block;
+}
+.brandTile .brandName{	
+	font-weight: bolder;
+	display: block;
+}
+.brandTile .brandInfo{
+	min-height: 155px;
+	overflow: hidden;
+}
+.brandTile .btnSets{
+	position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+.brandTile .releaseDate{
+	color: red;
+	text-decoration: underline;
+}
+.agencyTile a.msg{
+	margin-bottom: 5px;
+}
+.thumbnailGrid{
+	padding-left: 5px;
+	padding-right: 5px; 
+}
+.thumbnailGrid .thumbnail{
+	margin-bottom: 10px;
+	padding: 1px;
+}
+.factoryHeader{
+	margin-bottom: 10px;
+	position: relative;
+}
+.factoryHeader .factoryName{	
+	font-size: 13px;
+	font-weight: 700;
+	width: 160px;
+}
+.factoryInfoTable td{
+	vertical-align: top;
+	line-height: 22px;
+	white-space: normal;
+    max-width: 110px;
+    word-wrap: break-word;
+}
+.factoryHeader .factoryDetailBtn{
+	position: absolute;
+	top: 0;
+	right: 15px;
+}
+@media (min-width: 768px){
+	.factoryHeader .factoryName{
+		font-size: 22px;
+		font-weight: 700;
+	}	
+}
+
+.general-item-list > .item > .item-body{
+	color: #333333;
+}
+
+.booking-result .booking-info h2{
+	font-size: 16px;
+}
+
+.booking-result .booking-img {
+	height: 140px;
+	overflow:hidden;
+	margin-bottom: 10px;
+}
+
+.agencyLink,
+.factoryLink {
+	display:block;
+	font-size: 14px;
+	margin-bottom: 6px;
+	line-height: 22px;
+	text-decoration: underline;
+}
+.agencyTile .agencyLink,
+.brandTile .factoryLink{
+	float: left;
+	color: #A1887F;
+	font-size: 14px;
+	font-weight: bold;
+}
+.followBtn {
+	position:absolute;
+	top:8px;
+	right:8px;
+}
+.agencyTile .followBtn,
+.brandTile .followBtn {
+	color: #5e5e5e;
+	border: 1px solid #5e5e5e;
+	position: relative;
+	top: 0;
+	right: 0;
+	float: right;
+	font-size: 10px;
+}
+.noteActionBtn{
+	position:absolute;
+	right:5px;
+	bottom:5px;
+}
+
+.verifiedIcon{
+	color:#2474f6;
+	margin-left:5px;
+}
+.tiles{
+	margin-right: -3%
+}
+.tiles a.tile{
+	width: 31%!important;
+	background-color: #fff;
+	color: #006FBB;
+	border: 1px solid #ddd;
+	height: 120px;
+	margin: 0 5px 5px 0;
+}
+.tiles .tile .tile-body{
+	color: #006FBB;
+	padding: 0;
+}
+.tiles a.tile.disabled,
+.tiles .tile.disabled .tile-body{
+	color: #999999;
+}
+.tiles .tile .tile-object{
+	font-size: 14px;
+}
+.tiles .tile .tile-body > i{
+	font-size: 42px;
+}
+
+.search-div{
+	width:100%;
+	margin-bottom:5px;
+}
+.golden-title-div{
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 2px 5px;
+	background-color: #A1887F;
+}
+.golden-title-div>a{
+	color: #ffffff;
+}
+.modal .modal-header .close{
+	background-image: none !important;
+    width: 18px;
+    font-size: 18px;
+    height: 18px;
+    text-align: right;
+}
+.categorySelectUi .list-inline{
+	border-bottom: 1px solid #ddd;
+}
+.sidebar-tags li a.h5{
+	font-size: 14px;
+}
+
+.paginate ul.pagination {
+	margin: 2px 0;
+	white-space: nowrap;
+}
+.paginate{
+	margin: 0;
+	float: right;
+}
+
+.portlet > .portlet-title > .tools > a.expand{
+	background-image: url(../../../global/img/portlet-collapse-icon.png);
+}
+.portlet > .portlet-title > .tools > a.collapse{
+	background-image: url(../../../global/img/portlet-expand-icon.png);
+}
+
+.form-control.customSearch{
+	display: inline-block;
+	transition: width .5s;
+}
+.cancelSearch{
+	position: absolute;
+	display: none;
+}
+.categorySearchDiv{
+	margin:10px 0px;	
+}
+.categorySearchDiv a.categoryMark{
+	text-decoration: underline;
+	font-size:16px;
+}
+.categorySearchDiv a.categoryMark>i{
+	margin-left: 5px;
+}
+.citySearchDiv a.cityMark{
+	text-decoration: underline;
+}
+.citySearchDiv a.cityMark>i{
+	margin-left: 5px;
+}
+.adviceCategoryFilter.btn-group>.btn.active{
+	background-color: #000;
+	color: #fff;
+}
+.brandList.row{
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.brandList.row>div{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.sysMsgCount{
+	float: right;
+    margin-top: 15px;
+    position: relative;
+    margin-right: 10px;
+}
+@media (min-width: 768px){
+	.sysMsgCount{		
+	    margin-top: 18px;
+	}
+}
+.sysMsgCount .icon-bell{
+	font-size: 16px;
+}
+.sysMsgCount .badge{
+	position: absolute;
+    top: -8px;
+    left: -12px;
+    background-color: #f36a5a;
+    color: #ffffff;
+    padding: 4px 5px 3px 6px; 
+}
+.newSysMsg{
+	color:red;
+	font-size:16px;
+	font-weight:bold;
+}
+.advice.panel .panel-body{
+	padding: 15px 0;
+}
+.advice .note{
+    margin: 0 0 10px 0;
+    padding: 10px 30px 10px 15px;    
+}
+.more.top-news{
+	border-bottom: 1px solid #ccc;
+}
+.more.top-news a{
+	color: #5e5e5e;
+	margin-top: 12px;
+}
+.more.top-news a .top-news-icon{
+	left: 12px;
+	bottom: 4px;
+	font-size: 32px;
+	opacity: 1;
+}
+.more.top-news span{
+	padding-left: 60px;
+}
+.more .btn-icon-only{
+	height: 48px;
+    width: 48px;
+    padding-top: 16px;
+}

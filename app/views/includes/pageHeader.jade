@@ -1,0 +1,40 @@
+include ../mixins/menu
+div(class='navbar navbar-default')
+	div(class='navbar-header')
+		if (!session.user || session.user.provider !== 'wechat')
+			button(type='button', class='navbar-toggle', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+				span(class='icon-bar')
+				span(class='icon-bar')
+				span(class='icon-bar')
+		a(class='navbar-brand', href='/index/') #{title}
+	div(class='navbar-collapse collapse navbar-responsive-collapse')
+		//- ul(class='nav navbar-nav')
+			//- +menuActiveLi('/index/', '首页')
+			//- +menuActiveLi('/factories', '找厂家')
+			//- +menuActiveLi('/advice', '意见反馈')
+		ul(class='nav navbar-nav navbar-right')
+			if !session.user
+				+menuActiveLi('/signin', '登录')
+				+menuActiveLi('/signup', '注册')
+			else
+				if session.user.role === roles.admin
+					+menuActiveLi('/admin/', '管理员首页')
+				if session.user.role === roles.mall
+					+menuActiveLi('/mall/', '我是商场')
+				if session.user.role === roles.mallBrandManager
+					+menuActiveLi('/mallbrandmanager/', '品牌经理首页')
+				if session.user.role === roles.agency
+					+menuActiveLi('/agency/', '经销商首页')
+				if session.user.role === roles.factory || session.user.role === roles.factoryMember
+					+menuActiveLi('/factory/', '厂家首页')
+				li(class='dropdown')
+					a(href='javascript:void(0)', data-target='#' class='dropdown-toggle' data-toggle='dropdown')
+						+menuUserName()
+						b(class='caret')
+					ul(class='dropdown-menu')
+						+menuActiveLi('/profile', '个人信息')
+						if session.user.provider !== 'wechat'
+							li
+								a(href='/password') 修改密码
+							li
+								a(href='/signout') 退出

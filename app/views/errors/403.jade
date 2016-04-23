@@ -1,0 +1,10 @@
+extends ../layouts/default
+
+block content
+	if _.includes(requiredRoles, roles.agency) || _.includes(requiredRoles, roles.agencyMember)
+		h2 请注册/绑定经销商后使用此功能
+	else if _.includes(requiredRoles, roles.factory) || _.includes(requiredRoles, roles.factoryMember)
+		h2 请注册/绑定厂家后使用此功能
+	else
+		h2 没有访问权限
+

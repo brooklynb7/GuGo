@@ -1,0 +1,27 @@
+extends ../../layouts/admin
+
+mixin categoryFilterBtn(id, name)
+	a(href="#{ (id===undefined) ? '?' : '?category=' + id}", class="btn btn-xs #{ (query.category===id) ? 'active':'' }" )= name
+
+block content
+	div.portlet.light
+		div.portlet-title
+			div.caption
+				span.caption-subject.bold 意见与反馈
+			div.actions.btn-set
+				div.btn-group.adviceCategoryFilter
+					+categoryFilterBtn(undefined, '全部')
+					each val, idx in adviceConfig.category
+						+categoryFilterBtn(idx, val)
+		div.portlet-body.adviceList
+		div.paginate
+		div.row
+
+block extraScripts
+	-var adviceCategory = JSON.stringify(adviceConfig.category);
+	script(type='text/javascript').
+		var categoryTextMapper = !{adviceCategory};
+		var categoryFilter = '#{query.category}';
+	script(type='text/javascript', src='/static/javascripts/admin/advice/list.js')
+	script(type='text/template', id='removeAdviceTpl')
+		div.text-center!='您确定要删除这条意见反馈吗?'

@@ -1,0 +1,51 @@
+extends ../../layouts/admin
+
+block content
+	div.row
+		div.col-md-12
+			div.portlet.light.verifyPortlet
+				div.portlet-title
+					div.caption
+						i.fa.fa-user
+						span.caption-subject.bold 商家认证
+					div.actions.btn-set
+
+				div.portlet-body
+					ul.nav.nav-tabs
+						li.active
+							a(href='#tab-factory' data-toggle='tab') 厂商
+						li
+							a(href='#tab-agency' data-toggle='tab') 经销商
+					div.tab-content
+						div.tab-pane.fade.active.in#tab-factory
+							div.table-responsive
+								table.table.table-bordered.table-hover
+									thead
+										tr
+											th 名称
+											th 地址
+											th 认证状态
+											//th 创始年份
+											//th 员工数量
+											//th 面积
+											th(style='width:80px;') 操作
+									tbody#factoryTbody
+						div.tab-pane.fade#tab-agency
+							div.table-responsive
+								table.table.table-bordered.table-hover
+									thead
+										tr
+											th 法人
+											th 电话
+											th 昵称
+											th 认证状态
+											//th 地址
+											//th 创始年份
+											//th 注册渠道
+											th(style='width:80px;') 操作
+									tbody#agencyTbody
+
+
+block extraScripts
+	script(type='text/javascript', src='/static/lib/province.js')
+	script(type='text/javascript', src='/static/javascripts/admin/users/verify.js')

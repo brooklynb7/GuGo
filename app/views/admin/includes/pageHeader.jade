@@ -1,0 +1,55 @@
+include ../../mixins/menu
+div(class='navbar navbar-default')
+	div(class='navbar-header')
+		if session.user.provider !== 'wechat'
+			button(type='button', class='navbar-toggle', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+				span(class='icon-bar')
+				span(class='icon-bar')
+				span(class='icon-bar')
+		a(class='navbar-brand', href='/admin/') #{title}-后台管理
+	div(class='navbar-collapse collapse navbar-responsive-collapse')
+		ul(class='nav navbar-nav')
+			+menuAdminActiveLi('/', '后台首页')
+			li(class='dropdown')
+				a(href='javascript:void(0)', data-target='#' class='dropdown-toggle' data-toggle='dropdown')
+					span 帐号管理
+					b(class='caret')
+				ul(class='dropdown-menu')
+					+menuAdminActiveLi('/agencies', '经销商管理')
+					+menuAdminActiveLi('/factories', '厂家管理')
+					if session.user.role === roles.admin
+						+menuAdminActiveLi('/users', '用户管理')
+						+menuAdminActiveLi('/users/verify', '厂家/经销商认证')
+			if session.user.role === roles.admin
+				li(class='dropdown')
+					a(href='javascript:void(0)', data-target='#' class='dropdown-toggle' data-toggle='dropdown')
+						span 业务管理
+						b(class='caret')
+					ul(class='dropdown-menu')
+						+menuAdminActiveLi('/orders', '订单服务')
+						+menuAdminActiveLi('/sysmsgs', '平台消息')
+						+menuAdminActiveLi('/advice', '意见反馈')
+				li(class='dropdown')
+					a(href='javascript:void(0)', data-target='#' class='dropdown-toggle' data-toggle='dropdown')
+						span 配置管理
+						b(class='caret')
+					ul(class='dropdown-menu')
+						+menuAdminActiveLi('/redalliance', '红星战盟')
+						+menuAdminActiveLi('/categories', '类别管理')
+						+menuAdminActiveLi('/cities', '城市配置')
+		ul(class='nav navbar-nav navbar-right')
+			if !session.user
+				+menuActiveLi('/signin', '登录')
+				+menuActiveLi('/signup', '注册')
+			else
+				li(class='dropdown')
+					a(href='javascript:void(0)', data-target='#' class='dropdown-toggle' data-toggle='dropdown')
+						+menuUserName()
+						b(class='caret')
+					ul(class='dropdown-menu')
+						+menuAdminActiveLi('/profile/user', '个人信息')
+						if session.user.provider !== 'wechat'
+							li
+								+menuAdminActiveLi('/password', '修改密码')
+							li
+								a(href='/signout') 退出

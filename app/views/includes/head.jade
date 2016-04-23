@@ -1,0 +1,32 @@
+head
+	meta(charset='utf-8')
+	title #{title}
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	meta(id='viewport',name='viewport',content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no')
+	meta(content='', name='description')
+	meta(content='', name='author')
+	//- ,maximum-scale=1.0,user-scalable=no
+	//- BEGIN GLOBAL MANDATORY STYLES
+	//- link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/global/plugins/font-awesome/css/font-awesome.min.css',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/global/plugins/simple-line-icons/simple-line-icons.min.css',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/global/plugins/bootstrap/css/bootstrap.min.css',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/global/plugins/uniform/css/uniform.default.css',rel='stylesheet',type='text/css')
+	//- END GLOBAL MANDATORY STYLES
+	block pageLevelCss
+	link(href='/static/build/css/dist.min.css',rel='stylesheet',type='text/css')
+	//- BEGIN PAGE LEVEL PLUGIN STYLES
+	
+	//- link(href='/static/assets/global/plugins/jqvmap/jqvmap/jqvmap.css',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/global/plugins/morris/morris.css',rel='stylesheet',type='text/css')
+	//- END PAGE LEVEL PLUGIN STYLES
+
+	//- BEGIN THEME STYLES
+	//- link(href='/static/assets/ui/pages/css/tasks.css',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/global/css/components.css',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/global/css/plugins.css',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/ui/layout/css/layout.css',rel='stylesheet',type='text/css')
+	//- link(href='/static/assets/ui/layout/css/themes/default.css',rel='stylesheet',type='text/css')
+	//- END THEME STYLES
+	link(href='/static/assets/ui/layout/css/custom.css',rel='stylesheet',type='text/css')
+	//- link(rel='shortcut icon' href='favicon.ico')

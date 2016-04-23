@@ -1,0 +1,29 @@
+- var current = url.original
+mixin menuLink(href, name)
+	a(href=href)= name
+
+mixin menuActiveLi(href, name)
+	if current === href
+		li.active
+			+menuLink(href, name)
+	else 
+		li
+			+menuLink(href, name)
+
+mixin menuAdminActiveLi(href, name)
+	+menuActiveLi('/admin' + href, name)
+
+mixin menuMallActiveLi(href, name)
+	+menuActiveLi('/mall' + href, name)
+
+mixin menuMallBrandManagerActiveLi(href, name)
+	+menuActiveLi('/mallbrandmanager' + href, name)
+
+mixin menuFactoryActiveLi(href, name)
+	+menuActiveLi('/factory' + href, name)
+
+mixin menuAgencyActiveLi(href, name)
+	+menuActiveLi('/agency' + href, name)
+
+mixin menuUserName()
+	span= session.user.username

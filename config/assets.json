@@ -1,0 +1,36 @@
+{
+	"core": {
+		"css": {
+			"public/build/css/dist.min.css": [
+				"public/assets/global/plugins/font-awesome/css/font-awesome.min.css",
+				"public/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
+				"public/assets/global/plugins/bootstrap/css/bootstrap.min.css",
+				"public/assets/global/plugins/uniform/css/uniform.default.css",
+				"public/assets/ui/pages/css/tasks.css",
+				"public/assets/global/css/components.css",
+				"public/assets/global/css/plugins.css",
+				"public/assets/ui/layout/css/layout.css",
+				"public/assets/ui/layout/css/themes/default.css"
+			]
+		},
+		"js": {
+			"public/build/js/dist.min.js": [
+				"public/assets/global/plugins/jquery-1.11.0.min.js",
+				"public/assets/global/plugins/jquery-migrate-1.2.1.min.js",
+				"public/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js",
+				"public/assets/global/plugins/bootstrap/js/bootstrap.min.js",
+				"public/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js",
+				"public/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js",
+				"public/assets/global/plugins/jquery.blockui.min.js",
+				"public/assets/global/plugins/jquery.cokie.min.js",
+				"public/assets/global/plugins/uniform/jquery.uniform.min.js",
+				"public/assets/global/scripts/metronic.js",
+				"public/assets/ui/layout/scripts/layout.js",
+				"public/lib/jquery.hash.js",
+				"public/lib/moment/min/moment.min.js",
+				"public/lib/moment/locale/zh-cn.js",
+				"public/lib/lodash/lodash.min.js"
+			]
+		}
+	}
+}

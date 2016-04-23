@@ -1,0 +1,22 @@
+include ../mixins/form
+- var createTime = moment(profile.created).format('YYYY-MM-DD HH:mm:ss')
+div.row
+	div.col-md-12
+		div.portlet.light.bordered.form-fit.userProfileForm
+			div.portlet-title 
+				div.caption
+					i.icon-equalizer
+					span.caption-subject.bold 个人信息
+			div.portlet-body.form
+				form.form-horizontal.form-bordered
+					div.form-body
+						+staticContentFormGroup('username', '用户名', profile.username)
+						+staticContentFormGroup('role', '角色', rolesMap[profile.role])
+						//- +inputFormGroup('name','姓名', profile.name)
+						//- +inputFormGroup('mobile','手机', profile.mobile)
+						//- +inputFormGroup('email','邮箱', profile.email)
+						+staticContentFormGroup('provider', '注册渠道', providerMap[profile.provider])
+						+staticContentLastFormGroup('created', '注册时间', createTime)
+					//- div.form-actions.right
+					//- 	span.text-danger.updateMsg
+					//- 	button.btn.blue#saveBtn(type='button') 保存

@@ -1,0 +1,131 @@
+mixin _staticContentForm(id, name, value)
+	label.col-md-3.control-label #{name}
+	div.col-md-9
+		span.form-control-static !{value}
+
+mixin staticContentFormGroup(id, name, value)
+	div.form-group(id='#{id}')
+		+_staticContentForm(id, name, value)
+
+mixin staticContentLastFormGroup(id, name, value)
+	div.form-group.last(id='#{id}')
+		+_staticContentForm(id, name, value)
+
+mixin _inputControl(id, name, value, type)
+	input.form-control(id='#{id}', type='#{type||"text"}', value!='#{value||""}' placeholder='请填写#{name}')
+
+mixin _inputForm(id, name, value, helpText, type)
+	label.col-md-3.control-label(for='#{id}', id='label_#{id}') !{name}
+	div.col-md-9
+		+_inputControl(id, name, value, type)
+		-if(helpText !== undefined)
+			span.help-block= helpText
+mixin inputFormGroup(id, name, value, helpText, type)
+	div.form-group
+		+_inputForm(id, name, value, helpText, type)
+
+mixin inputLastFormGroup(id, name, value, helpText, type)
+	div.form-group.last
+		+_inputForm(id, name, value, helpText,type)
+
+mixin _hideForm(id, name, value)
+	label.col-md-3.control-label(for='#{id}') #{name}
+	div.col-md-9
+		input.form-control(type="hidden",id="#{id}")
+mixin hideFormGroup(id, name, value)
+	div.form-group
+		+_hideForm(id, name, value)
+
+mixin hideLastFormGroup(id, name, value)
+	div.form-group.last
+		+_hideForm(id, name, value)
+
+mixin _textareaControl(id, name, value)
+	textarea.form-control(id='#{id}', rows='5', placeholder='请填写#{name}') #{value||""}
+
+mixin _textareaForm(id, name ,value, helpText)
+	label.col-md-3.control-label(for='#{id}') #{name}
+	div.col-md-9
+		+_textareaControl(id, name, value)
+		-if(helpText !== undefined)
+			span.help-block= helpText
+
+mixin textareaFormGroup(id, name, value, helpText)
+	div.form-group
+		+_textareaForm(id, name, value, helpText)
+mixin textareaLastFormGroup(id, name, value, helpText)
+	div.form-group.last
+		+_textareaForm(id, name, value, helpText)
+
+mixin _selectForm(id, name, value, options, helpText)
+	label.col-md-3.control-label(id='label_#{id}', for='#{id}') #{name}
+	div.col-md-9
+		select.form-control(id='#{id}')
+			if options
+				each val in options
+					if value && val._id.toString() === value.toString()
+						option(value='#{val._id}', selected='selected')= val.name
+					else 
+						option(value='#{val._id}')= val.name
+		span.help-block= helpText
+
+mixin selectFormGroup(id, name, value, options, helpText)
+	div.form-group
+		+_selectForm(id, name, value, options, helpText)
+
+mixin selectLastFormGroup(id, name, value, options, helpText)
+	div.form-group.last
+		+_selectForm(id, name, value, options, helpText)
+
+mixin _selectGroupForm(id, name, value, optGroups)
+	label.col-md-3.control-label(for='#{id}') #{name}
+	div.col-md-9
+		select.form-control.select2.select2-offscreen(id='#{id}')
+			option(value='')
+			each val,key in optGroups
+				optgroup(label='#{key}')
+					each option in val
+						if value && option._id.toString() === value.toString()
+							option(value='#{option._id}' selected='selected')= option.name
+						else 
+							option(value='#{option._id}')= option.name
+
+mixin selectGroupFormGroup(id, name, value, optGroups)
+	div.form-group
+		+_selectGroupForm(id, name, value, optGroups)
+
+mixin _datePickerForm(id, name, value)
+	label.col-md-3.control-label #{name}
+	div.col-md-3
+		div.input-group.date.date-picker(data-date-format='yyyy-mm-dd')
+			input.form-control(id='#{id}', readonly='',type='text')
+			span.input-group-btn
+				button.btn.default.date-set(type='button')
+					i.fa.fa-calendar
+
+mixin datePickerFormGroup(id, name, value)
+	div.form-group
+		+_datePickerForm(id, name, value)
+
+mixin datePickerLastFormGroup(id, name ,value)
+	div.form-group.last
+		+_datePickerForm(id, name, value)
+
+mixin rateFormGroup(id, name, value)
+	label.col-md-3.control-label #{name}
+	div.col-md-9
+		div.rateit
+mixin _checkboxForm(id, name, value)
+	label.col-md-3.control-label #{name}
+	div.col-md-9
+		if value
+			input.form-control(id='#{id}', type='checkbox', checked='checked', style='margin-top:0;margin-bottom:-6px')
+		else
+			input.form-control(id='#{id}', type='checkbox', style='margin-top:0;margin-bottom:-6px')
+mixin checkboxFormGroup(id, name, value)
+	div.form-group
+		+_checkboxForm(id, name, value)
+
+mixin checkboxLastFormGroup(id, name ,value)
+	div.form-group.last
+		+_checkboxForm(id, name, value)

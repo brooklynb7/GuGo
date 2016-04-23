@@ -1,0 +1,34 @@
+extends ../layouts/default
+
+block content
+	div.advice.panel.panel-default.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3
+		div.panel-body
+			form
+				fieldset
+					legend 意见与反馈
+					div.form-group
+						label.control-label(for='inputName') 名字
+						input.form-control#inputName(type='text', value=((session.user && (session.user.name || session.user.username))||''), placeholder='请填写您的名字')
+					div.form-group
+						label.control-label(for='inputEmail') 邮箱
+						input.form-control#inputEmail(type='text', value=((session.user && session.user.email)||''), placeholder='请填写您的邮箱')
+					div.form-group
+						label.control-label(for='inputPhone') 手机
+						input.form-control#inputPhone(type='text', value=((session.user && session.user.mobile)||''), placeholder='请填写您的手机(选填)')
+					div.form-group
+						label.control-label(for='selectCategory') 类别
+						select.form-control#selectCategory
+							each val, idx in adviceConfig.category
+								option(value=idx)= val
+					div.form-group
+						label.control-label(for='inputPhone') 您的建议 
+							span (
+							span.adviceCount 0
+							span /200)
+						textarea.form-control#inputAdvice(rows='4', placeholder='请填写您的建议, 不超过200个字')
+					div.text-right
+						a.btn.btn-default(href='/more',type='button', style='margin-right:10px;') 返回
+						button.btn.btn-primary#postAdviceBtn(type='button') 提交
+					div.adviceMsg.text-right
+block extraScripts
+	script(type='text/javascript', src='/static/javascripts/advice/index.js')

@@ -1,0 +1,29 @@
+extends ../layouts/admin
+
+block content
+	div.tiles
+		a.tile(href='/admin/agencies')
+			div.tile-body
+				i.fa.fa-delicious
+			div.tile-object.text-center 经销商管理
+		a.tile(href='/admin/factories')
+			div.tile-body
+				i.fa.fa-sitemap
+			div.tile-object.text-center 厂家管理
+		if session.user.role === roles.admin
+			a.tile(href='/admin/users')
+				div.tile-body
+					i.fa.fa-users
+				div.tile-object.text-center 用户管理
+			a.tile(href='/admin/users/verify')
+				div.tile-body
+					i.fa.fa-check
+				div.tile-object.text-center 认证管理
+			a.tile(href='/admin/cities')
+				div.tile-body
+					i.fa.fa-globe
+				div.tile-object.text-center 城市配置
+			a.tile(href='/admin/sysmsgs')
+				div.tile-body
+					i.fa.fa-envelope-o
+				div.tile-object.text-center 平台消息
