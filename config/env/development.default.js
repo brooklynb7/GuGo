@@ -2,10 +2,10 @@
 
 module.exports = {
 	db: {
-		uri: 'mongodb://localhost/myUnited',
+		uri: 'mongodb://localhost/db',
 		options: {
-			user: 'myUnited',
-			pass: '123456'
+			user: '',
+			pass: ''
 		}
 	},
 	wechat: {

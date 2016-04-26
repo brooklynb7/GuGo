@@ -28,7 +28,7 @@ var paths = {
 	clientCss: ['public/stylesheets/**/*.css']
 };
 
-var defaultTasks = ['clean', 'jshint', 'csslint', 'devServe'];
+var defaultTasks = ['clean', 'eslint', 'csslint', 'devServe'];
 
 gulp.task('env:development', function() {
 	process.env.NODE_ENV = 'development';
@@ -40,6 +40,15 @@ gulp.task('jshint', function() {
 		.pipe(plugins.jshint.reporter('jshint-stylish'))
 		.pipe(plugins.jshint.reporter('fail'))
 		.pipe(count('jshint', 'files lint free'));
+});
+
+// ESLint JS linting task
+gulp.task('eslint', function() {
+	var assets = paths.serverJs.concat(paths.clientJs);
+
+	return gulp.src(assets)
+		.pipe(plugins.eslint())
+		.pipe(plugins.eslint.format());
 });
 
 gulp.task('csslint', function() {

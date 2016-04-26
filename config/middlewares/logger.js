@@ -25,7 +25,7 @@ module.exports = function(app) {
 	// Environment dependent middleware
 	if (process.env.NODE_ENV === 'development') {
 		// Enable logger (morgan)
-		//app.use(morgan('dev'));
+		// app.use(morgan('dev'));
 		// Disable views cache
 		app.set('view cache', false);
 	} else if (process.env.NODE_ENV === 'production') {

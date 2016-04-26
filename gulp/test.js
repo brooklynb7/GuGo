@@ -12,11 +12,10 @@ gulp.task('env:test', function() {
 
 gulp.task('mochaTest', function() {
 	return gulp.src('app/tests/**/*.js', {
-			read: false
-		})
-		.pipe(plugins.mocha({
-			reporter: 'spec'
-		}));
+		read: false
+	}).pipe(plugins.mocha({
+		reporter: 'spec'
+	}));
 });
 
 gulp.task('test', defaultTasks);

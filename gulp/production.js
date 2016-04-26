@@ -29,7 +29,7 @@ gulp.task('cssmin', function() {
 	if (config.srcGlob.length) {
 		return gulp.src(config.srcGlob)
 			.pipe(plugins.cssmin({
-				//keepBreaks: true
+				// keepBreaks: true
 			}))
 			.pipe(plugins.concat(config.destFile))
 			.pipe(gulp.dest(path.join('public/build', config.destDir)));
@@ -53,7 +53,7 @@ gulp.task('uglify', function() {
 gulp.task('prodServe', ['env:production'], function() {
 	plugins.nodemon({
 		script: 'server.js',
-		ext: 'html js',
+		ext: 'jade js',
 		env: {
 			'NODE_ENV': 'production'
 		},

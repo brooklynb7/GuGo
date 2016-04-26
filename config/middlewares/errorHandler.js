@@ -16,20 +16,26 @@ var handleNotFound = function(path, res) {
 };
 
 module.exports = function(app) {
-	//Handle 500 error
+	// Handle 500 error
 	app.use('/api', function(err, req, res, next) {
-		//console.log(err);
-		if (!err) return next();
+		// console.log(err);
+		if (!err) {
+			return next();
+		}
 		res.status(err.status || 500).send('内部错误');
 	});
 
 	app.use('/admin', function(err, req, res, next) {
-		if (!err) return next();
+		if (!err) {
+			return next();
+		}
 		handleError(err, 'admin/', res);
 	});
 
 	app.use(function(err, req, res, next) {
-		if (!err) return next();
+		if (!err) {
+			return next();
+		}
 		handleError(err, '', res);
 	});
 

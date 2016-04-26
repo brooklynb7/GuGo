@@ -3,7 +3,7 @@
 var config = require('../config'),
 	passport = require('passport'),
 	session = require('express-session'),
-	mongoose = require('mongoose'),
+	lusca = require('lusca'),
 	MongoStore = require('connect-mongo')({
 		session: session
 	});
@@ -15,17 +15,21 @@ module.exports = function(app, db) {
 		resave: true,
 		secret: config.sessionSecret,
 		store: new MongoStore({
-			mongooseConnection: mongoose.connection,
+			mongooseConnection: db.connection,
 			collection: config.sessionCollection
 		}),
 		cookie: {
-			maxAge: 2 * 60 * 60 * 1000
+			maxAge: config.sessionCookie.maxAge,
+			httpOnly: config.sessionCookie.httpOnly,
+			secure: config.sessionCookie.secure && config.secure && config.secure.ssl
 		},
-		name: 'connect.sid'
+		key: config.sessionKey
 	}));
 
 	// use passport session
 	app.use(passport.initialize());
 	app.use(passport.session());
 
+	// Add Lusca CSRF Middleware
+	app.use(lusca(config.csrf));
 };

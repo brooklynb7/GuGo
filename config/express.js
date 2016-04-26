@@ -5,19 +5,16 @@
  */
 var http = require('http'),
 	express = require('express'),
-	flash = require('connect-flash'),
-	config = require('./config'),
 	middleware = require('./middlewares');
 
 module.exports = function(db) {
 	// Initialize express app
 	var app = express();
-	app.use(flash());
 
 	middleware.locals(app);
-	//staticFile must be put before session, 
-	//otherwish there will be issue for passport login very first time opening the browser
-	middleware.staticFile(app); 
+	// staticFile must be put before session,
+	// otherwish there will be issue for passport login very first time opening the browser
+	middleware.staticFile(app);
 	middleware.template(app);
 	middleware.parser(app);
 	middleware.session(app, db);

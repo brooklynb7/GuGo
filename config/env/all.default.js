@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path');
+var access = require('./access');
 
 module.exports = {
 	app: {

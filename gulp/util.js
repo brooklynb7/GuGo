@@ -8,6 +8,6 @@ var plugins = gulpLoadPlugins();
 gulp.task('help', plugins.taskListing);
 
 gulp.task('clean', function(cb) {
-	//return del(['public/libbuild'], cb);
+	// return del(['public/libbuild'], cb);
 	cb();
 });
